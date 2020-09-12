@@ -1,7 +1,6 @@
 
 const button = document.getElementById("button")
-const list= document.getElementById("bag")
-const input = document.getElementById("input")
+
 
 let x = 0
 function clickButton(){
@@ -14,7 +13,7 @@ function clickButton(){
     x ++;
     let id = `item-${x}`
     newList += `
-    <li id="${id}">${input.value} <button onclick="remove('${id}')" id="rmButton" class="">Remove</button></li>
+    <li id="${id}">${input.value} <button onclick="remove('${id}')"id="rmButton" class="">Remove</button></li>
     `;
     
     list.innerHTML = newList;
@@ -25,3 +24,5 @@ function clickButton(){
 function remove(id){
     document.getElementById(id).remove()
 }
+
+document.getElementById("button").addEventListener("click", clickButton )
