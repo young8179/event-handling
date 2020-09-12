@@ -1,20 +1,27 @@
 
+const button = document.getElementById("button")
+const list= document.getElementById("bag")
+const input = document.getElementById("input")
 
-const heading = document.createElement("div")
-const listBag = document.createElement("ul")
-const listItem = document.createElement("li")
-const body = document.querySelector("body");
-
-
-listBag.textContent = "Shopping list";
-
-
-body.appendChild(heading);
-heading.appendChild(listBag);
-listBag.appendChild(listItem);
-
-const button = document.
-
-function addItem(){
-
+let x = 0
+function clickButton(){
+    const list= document.getElementById("bag")
+    const input = document.getElementById("input")
+    if (input.value === '') {
+        return
+    }
+    let newList = list.innerHTML;
+    x ++;
+    let id = `item-${x}`
+    newList += `
+    <li id="${id}">${input.value} <button onclick="remove('${id}')" id="rmButton" class="">Remove</button></li>
+    `;
+    
+    list.innerHTML = newList;
+    input.value = ''
+    
+   
+}   
+function remove(id){
+    document.getElementById(id).remove()
 }
